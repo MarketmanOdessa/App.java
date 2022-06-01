@@ -35,6 +35,7 @@ public class ChatBot {
         dish.put("Голубцы", 480);
         dish.put("Блинчики", 450);
         dish.put("Омлет", 370);
+        dish.put("Плов", 690);
     }
     
     public static String process(String message) {
@@ -47,7 +48,7 @@ public class ChatBot {
         double dishCalories = find(message, dish);
 
         if (sexСalories < 0) {
-            return "Введите свой пол одной буквой (М,Ж)";
+            return "Введите свой пол одной буквой (М,Ж) и через пробел название блюда";
         }
 
         if (dishCalories < 0) {
@@ -92,7 +93,8 @@ public class ChatBot {
         message = message.toLowerCase();
 
         String helloWord1 = "привет";
-        String helloWord2 = "здравствуй";
+        String helloWord2 = "hello";
+        String helloWord3 = "Добрий вечір";
 
         return message.contains(helloWord1) || message.contains(helloWord2);
     }
